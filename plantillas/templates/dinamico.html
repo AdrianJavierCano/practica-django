@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi primer template de django</title>
+    </head>
+    <body style = 'background:white'>
+        <h1 style = "color:#ff00ff; text-align:center; padding:50px;">Hola {{name}}</h1>
+        <h3>Categorias</h3>
+        <ul>
+          {% comment %}
+            En la parte inferior recorremos las categorias
+          {% endcomment %}
+            {%for elemento in categories%}
+              {% if elemento == 'code'%}
+                <li><b>{{elemento | upper}}</b></li>
+              {% else%}
+                <li><b style = 'color:orange'>elemento</b></li>
+              {% endif %}
+            {%endfor%}
+         <h5> El tamaño de la categoria es: {{categories|length}}</h5>
+        </ul>
+
+    </body>
+    </html>
